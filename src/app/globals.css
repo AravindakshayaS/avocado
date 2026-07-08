@@ -1,51 +1,63 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Define all your custom colors here */
-  --color-chocolate-deep: #2B1810; /* Replace with your exact deep chocolate hex */
-  --color-chocolate-mid: #5C3D2E;  /* Replace with your exact mid chocolate hex */
-  --color-cream: #FFFDD0;          /* Replace with your exact cream hex */
-  --color-beige-mid: #F5F5DC;       /* Replace with your exact beige hex */
-  
-  /* Define custom shadows if shadow-soft and shadow-card are custom */
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+@layer base {
+  html { scroll-behavior: smooth; }
 
-/* Base Styles (No @layer needed) */
-html { 
-  scroll-behavior: smooth; 
-}
-body { 
-  background-color: #FDFBF7; 
-  color: #3B2418; 
-}
-h1, h2, h3, h4 { 
-  font-family: var(--font-cormorant), Georgia, serif; 
-}
-p, span, a, button, input, label, select { 
-  font-family: var(--font-jost), system-ui, sans-serif; 
+  body {
+    /* Transparent so MeshBackground shows through */
+    background: transparent;
+    color: #3B2418;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-cormorant), Georgia, serif;
+  }
+  p, span, a, button, input, label, select {
+    font-family: var(--font-jost), system-ui, sans-serif;
+  }
 }
 
-/* Component Classes (No @layer needed, @apply works natively) */
-.btn-primary {
-  @apply bg-chocolate-deep text-cream px-6 py-3 rounded-2xl font-medium text-sm
-         hover:opacity-90 transition-all duration-200 shadow-soft;
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-2xl font-body font-medium text-sm
+           hover:opacity-90 transition-all duration-200;
+    background: #3B2418;
+    color: #FDFBF7;
+  }
+  .btn-outline {
+    @apply px-6 py-3 rounded-2xl font-body font-medium text-sm
+           transition-all duration-200;
+    border: 1px solid #3B2418;
+    color: #3B2418;
+  }
+  .btn-outline:hover {
+    background: #3B2418;
+    color: #FDFBF7;
+  }
+  .card {
+    @apply rounded-3xl transition-all duration-300;
+    background: rgba(253, 251, 247, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(59, 36, 24, 0.08);
+  }
+  .tag {
+    @apply text-xs font-medium px-3 py-1 rounded-full font-body;
+    background: #EDE0CC;
+    color: #6B4530;
+  }
 }
 
-.btn-outline {
-  @apply border border-chocolate-deep text-chocolate-deep px-6 py-3 rounded-2xl font-medium text-sm
-         hover:bg-chocolate-deep hover:text-cream transition-all duration-200;
+/* ── Ticker banner scroll animation ─────────────────── */
+@keyframes ticker-move {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-25%); }
 }
 
-.card {
-  @apply bg-white rounded-3xl shadow-soft hover:shadow-card transition-all duration-300;
-}
-
-.tag {
-  @apply bg-beige-mid text-chocolate-mid text-xs font-medium px-3 py-1 rounded-full;
-}
-
-.section {
-  @apply px-6 py-16 max-w-7xl mx-auto;
+/* ── Hero scroll dot ─────────────────────────────────── */
+@keyframes scrollDot {
+  0%   { transform: translateY(0);    opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
 }

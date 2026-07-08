@@ -10,25 +10,23 @@ const TICKER_MESSAGES = [
   "Follow for updates",
 ];
 
-export default function TickerBanner() {
-  // Repeat enough times to fill wide screens and loop seamlessly
-  const items = [...TICKER_MESSAGES, ...TICKER_MESSAGES, ...TICKER_MESSAGES, ...TICKER_MESSAGES];
+// Repeat 4x so the loop is seamless on all screen widths
+const items = [
+  ...TICKER_MESSAGES,
+  ...TICKER_MESSAGES,
+  ...TICKER_MESSAGES,
+  ...TICKER_MESSAGES,
+];
 
+export default function TickerBanner() {
   return (
     <div style={{ background:t.chocolateDeep, borderBottom:`1px solid rgba(169,130,106,0.25)`, overflow:"hidden", position:"relative", zIndex:60, width:"100%" }}
-      className="py-2">
-      <div
-        style={{
-          display:"flex",
-          whiteSpace:"nowrap",
-          width:"max-content",
-          animation:"ticker-move 25s linear infinite",
-        }}
-      >
+      className="py-2.5">
+      <div style={{ display:"flex", whiteSpace:"nowrap", width:"max-content", animation:"ticker-move 30s linear infinite" }}>
         {items.map((msg, i) => (
-          <span key={i} style={{ color:t.cream, fontFamily:t.fontBody, fontSize:12, letterSpacing:"0.15em", textTransform:"uppercase", padding:"0 28px", display:"flex", alignItems:"center", gap:28, flexShrink:0 }}>
+          <span key={i} style={{ color:t.cream, fontFamily:t.fontBody, fontSize:12, letterSpacing:"0.14em", textTransform:"uppercase", padding:"0 32px", display:"inline-flex", alignItems:"center", gap:32, flexShrink:0 }}>
             {msg}
-            <span style={{ color:t.beigeDark, fontSize:8 }}>●</span>
+            <span style={{ color:t.beigeDark, fontSize:7, lineHeight:1 }}>●</span>
           </span>
         ))}
       </div>
