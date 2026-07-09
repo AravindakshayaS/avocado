@@ -2,7 +2,6 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import MeshBackground from "@/components/MeshBackground";
 
-
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
@@ -23,27 +22,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${cormorant.variable} ${jost.variable}`}
-        style={{ background: "transparent", margin: 0, padding: 0, minHeight: "100vh" }}>
-
-        {/*
-          MeshBackground sits at z-0, fixed to the viewport.
-          It stays perfectly behind every page, section, and component.
-          All your page content sits above it at z-10 and higher.
-        */}
+    <html lang="en" style={{ background: "transparent" }}>
+      <body
+        className={`${cormorant.variable} ${jost.variable} antialiased`}
+        style={{ background: "transparent", margin: 0, padding: 0, minHeight: "100vh" }}
+      >
+        {/* z-0: fixed mesh background — always behind everything */}
         <MeshBackground />
 
-        {/*
-          Everything inside (page.js, sections, navbar etc.)
-          renders above the mesh at z-10+.
-          Sections that need a solid bg just set their own background color.
-          Sections you want to show the mesh through — set background: transparent.
-        */}
-        <div style={{ position: "relative", zIndex: 10 }}>
+        {/* z-10: all page content renders above the mesh */}
+        <div style={{ position: "relative", zIndex: 10, minHeight: "100vh" }}>
           {children}
         </div>
-
       </body>
     </html>
   );
