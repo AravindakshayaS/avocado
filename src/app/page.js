@@ -10,6 +10,7 @@ import FoodiesSection  from "@/components/FoodiesSection";
 import CardStack       from "@/components/CardStack"; 
 import MeshBackground from "@/components/MeshBackground";
 import WhySection      from "@/components/WhySection";
+import HowItWorks  from "@/components/HowItWorks";
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
   const [scrolled, setScrolled]     = useState(false);
@@ -49,6 +50,7 @@ export default function Home() {
         <WhySection />
 
         {/* Page 6+ coming soon */}
+        <HowItWorks /> 
 
       </main>
     </>
