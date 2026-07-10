@@ -28,7 +28,7 @@ export default function Navbar({ scrolled }) {
 
   return (
     <nav ref={navRef}
-      style={{ background: isScrolled ? "rgba(253,251,247,0.97)" : "transparent", borderBottom: isScrolled ? `1px solid ${t.beigeDark}40` : "none", backdropFilter: isScrolled ? "blur(16px)" : "none", transition:"all 0.4s", top:36 }}
+      style={{ background: isScrolled ? "rgba(253,251,247,0.88)" : "transparent", borderBottom: isScrolled ? `1px solid ${t.beigeDark}40` : "none", backdropFilter: isScrolled ? "blur(16px)" : "none", transition:"all 0.4s", top:36 }}
       className="fixed left-0 right-0 z-50">
 
       <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
