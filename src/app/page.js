@@ -12,6 +12,7 @@ import MeshBackground from "@/components/MeshBackground";
 import WhySection      from "@/components/WhySection";
 import HowItWorks  from "@/components/HowItWorks";
 import AppSection from"@/components/AppSection";
+
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
   const [scrolled, setScrolled]     = useState(false);
@@ -27,7 +28,6 @@ export default function Home() {
       {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
       <main style={{ background:"transparent", opacity:showSplash?0:1, transition:"opacity 0.7s" }}>
 
-        {/* Fixed ticker — always on top */}
         <div style={{ position:"fixed", top:0, left:0, right:0, zIndex:70 }}>
           <TickerBanner />
         </div>
@@ -35,25 +35,13 @@ export default function Home() {
 
         <Navbar scrolled={scrolled} />
 
-        {/* Page 1 */}
-        <Hero />
-
-        {/* Page 2 */}
-        <DiscoverSection />
-
-        {/* Page 3 */}
-        <DishSection />
-
-        {/* Page 4 */}
-        <FoodiesSection />
-
-        {/* Page 5 */}
-        <WhySection />
-
-        {/* Page 6+ coming soon */}
-        <HowItWorks /> 
-
-        <AppSection />
+        <Hero />           {/* Page 1 */}
+        <DiscoverSection />{/* Page 2 */}
+        <DishSection />    {/* Page 3 */}
+        <FoodiesSection /> {/* Page 4 */}
+        <WhySection />     {/* Page 5 */}
+        <HowItWorks />     {/* Page 6 */}
+        <AppSection />     {/* Page 7 */}
 
       </main>
     </>
