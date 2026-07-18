@@ -79,7 +79,7 @@ export default function FoodiesSection() {
   const [headRef, headIn] = useInView();
 
   return (
-    <section style={{ background:t.chocolateDeep, minHeight:"100vh", display:"flex", alignItems:"center" }} className="py-24">
+    <section id="foodies" style={{ background:t.chocolateDeep, minHeight:"100vh", display:"flex", alignItems:"center" }} className="py-24">
       <div className="max-w-7xl mx-auto px-6 w-full">
 
         {/* Centered heading block */}
@@ -87,7 +87,7 @@ export default function FoodiesSection() {
           <p style={{ color:t.chocolateLight, fontFamily:t.fontBody, fontSize:11, letterSpacing:"0.3em", textTransform:"uppercase", marginBottom:20 }}>
             Foodies
           </p>
-          <h2 style={{ color:t.cream, fontFamily:t.fontHeading, fontSize:"clamp(36px,5vw,60px)", fontWeight:600, letterSpacing:"0.02em", lineHeight:1.1, marginBottom:24 }}>
+          <h2 style={{ color:t.cream, fontFamily:t.fontDisplay, fontSize:"clamp(36px,5vw,60px)", fontWeight:600, letterSpacing:"0.02em", lineHeight:1.1, marginBottom:24 }}>
             Dining is better<br />together.
           </h2>
           <div style={{ width:48, height:2, background:t.beigeDark, borderRadius:2, margin:"0 auto 24px" }} />
