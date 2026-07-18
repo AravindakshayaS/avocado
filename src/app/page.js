@@ -12,6 +12,7 @@ import MeshBackground from "@/components/MeshBackground";
 import WhySection      from "@/components/WhySection";
 import HowItWorks  from "@/components/HowItWorks";
 import AppSection from"@/components/AppSection";
+import WaitlistModal from"@/components/WaitlistModal";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
