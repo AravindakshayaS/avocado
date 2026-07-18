@@ -69,7 +69,7 @@ function CafeCard({ cafe, index }) {
 export default function DiscoverSection() {
   const [headRef, headIn] = useInView();
   return (
-    <section style={{ background:t.chocolateDeep, minHeight:"100vh", display:"flex", alignItems:"center" }} className="py-24">
+    <section id="discover" style={{ background:t.chocolateDeep, minHeight:"100vh", display:"flex", alignItems:"center" }} className="py-24">
       <div className="max-w-7xl mx-auto px-6 w-full">
 
         {/* Centered heading block */}
@@ -77,7 +77,7 @@ export default function DiscoverSection() {
           <p style={{ color:t.chocolateLight, fontFamily:t.fontBody, fontSize:11, letterSpacing:"0.3em", textTransform:"uppercase", marginBottom:20 }}>
             About Discover
           </p>
-          <h2 style={{ color:t.cream, fontFamily:t.fontHeading, fontSize:"clamp(36px,5vw,60px)", fontWeight:600, letterSpacing:"0.02em", lineHeight:1.1, marginBottom:24 }}>
+          <h2 style={{ color:t.cream, fontFamily:t.fontDisplay, fontSize:"clamp(36px,5vw,60px)", fontWeight:600, letterSpacing:"0.02em", lineHeight:1.1, marginBottom:24 }}>
             Find your next favourite spot.
           </h2>
           <div style={{ width:48, height:2, background:t.beigeDark, borderRadius:2, margin:"0 auto 24px" }} />
