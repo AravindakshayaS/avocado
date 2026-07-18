@@ -10,7 +10,7 @@ const DISHES = [
   { name:"Avocado Toast",       price:380, rating:4.7, desc:"Smashed avocado, chilli flakes, lemon zest on sourdough. The classic done right.", quality:4.6, quantity:4.4, tag:"Classic" },
 ];
 
-const AUTO_INTERVAL = 2000; // ms between auto-rotations
+const AUTO_INTERVAL = 3000; // ms between auto-rotations
 
 export default function DishSection() {
   const [headRef, headIn] = useInView();
@@ -54,6 +54,7 @@ export default function DishSection() {
 
   return (
     <section
+      id="dish"
       style={{ background:"rgba(237,224,204,0.70)", backdropFilter:"blur(2px)", minHeight:"100vh", display:"flex", alignItems:"center" }}
       className="py-24">
       <div className="max-w-7xl mx-auto px-6 w-full">
@@ -63,32 +64,9 @@ export default function DishSection() {
           <p style={{ color:t.chocolateMid, fontFamily:t.fontBody, fontSize:11, letterSpacing:"0.3em", textTransform:"uppercase", marginBottom:20 }}>
             Dish Ratings
           </p>
-          <h2 style={{
-            fontFamily: t.fontHeading,
-            fontSize: "clamp(44px, 7vw, 88px)",
-            fontWeight: 700,
-            color: "#111111",
-            lineHeight: 1.05,
-            letterSpacing: "-0.01em",
-            margin: 0,
-          }}>
-            Know exactly what
+          <h2 style={{ color:t.chocolateDeep, fontFamily:t.fontDisplay, fontSize:"clamp(36px,5vw,60px)", fontWeight:600, letterSpacing:"0.02em", lineHeight:1.1, marginBottom:24 }}>
+            Know exactly what<br />you're ordering.
           </h2>
-          
-          <h2 style={{
-            fontFamily: t.fontHeading,
-            fontSize: "clamp(44px, 7vw, 88px)",
-            fontWeight: 700,
-            color: "#6B1E2E",
-            fontStyle: "italic",
-            lineHeight: 1.05,
-            letterSpacing: "-0.01em",
-            margin: 0,
-          }}>
-            you're ordering.
-          </h2>
-        
-          
           <div style={{ width:48, height:2, background:t.chocolateDeep, borderRadius:2, margin:"0 auto 24px" }} />
           <p style={{ color:t.chocolateMid, fontFamily:t.fontBody, fontSize:16, lineHeight:1.8 }}>
             Every dish on Avocado is rated for quality and quantity by verified diners.
@@ -215,7 +193,7 @@ export default function DishSection() {
               <div style={{ marginTop:24, display:"flex", alignItems:"center", gap:8 }}>
                 <div style={{ width:6, height:6, borderRadius:"50%", background: paused ? t.beigeDark : "#7FAF7F", transition:"background 0.3s" }} />
                 <span style={{ color:t.chocolateLight, fontFamily:t.fontBody, fontSize:11, letterSpacing:"0.08em" }}>
-                  {paused ? "Paused — resuming shortly" : "Auto-rotating every 2s"}
+                  {paused ? "Paused — resuming shortly" : "Auto-rotating every 3s"}
                 </span>
               </div>
             </div>
