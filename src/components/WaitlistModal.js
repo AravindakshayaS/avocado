@@ -48,7 +48,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
           onClick={e => e.stopPropagation()}
           style={{
             width: "100%",
-            maxWidth: 460,
+            maxWidth: 400,
             borderRadius: "1.75rem",
             position: "relative",
             overflow: "hidden",
